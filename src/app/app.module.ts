@@ -1,25 +1,39 @@
 import { RouterModule } from '@angular/router';
-import { NgModule, Component } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-//import { TestCssComponent } from './test-css/test-css.component';
+import { ServiceComponent } from './service/service.component';
+import { ManagerComponent } from './manager/manager.component';
+import { IndexComponent } from './index/index.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
     AppComponent,
-    //TestCssComponent
+    ServiceComponent,
+    ManagerComponent,
+    IndexComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
-    /*RouterModule.forRoot([
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
+    RouterModule.forRoot([
       {
-        path:'testCss',
-        component : TestCssComponent
+        path:'index',
+        component : IndexComponent
+      },{
+        path:'manager',
+        component : ManagerComponent
+      },{
+        path:'service',
+        component : ServiceComponent
       }
-    ])*/
+    ])
   ],
   providers: [],
   bootstrap: [AppComponent]
