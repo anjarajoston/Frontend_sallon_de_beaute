@@ -30,7 +30,7 @@ export class ServiceComponent implements OnInit {
     this.Service.commission=forme.value.commission;
     alert(JSON.stringify(this.Service));
     this.data.nouveau_service(this.Service).subscribe(res=>{console.log(res);
-      this.router.navigate(['/service']);
+      this.router.navigate(['service']);
     })
   }
   

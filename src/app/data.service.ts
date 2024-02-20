@@ -13,4 +13,12 @@ export class DataService {
   nouveau_service(service:Service) {
     return this.http.post('http://localhost:8282/nouveau_service',service);
   }
+
+  liste_service(){
+    return this.http.get('http://localhost:8282/liste_service');
+  }
+
+  liste_employer(){
+    return this.http.get('http://localhost:8282/liste_employer');
+  }
 }

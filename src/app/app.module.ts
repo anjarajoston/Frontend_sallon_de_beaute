@@ -9,6 +9,8 @@ import { ServiceComponent } from './service/service.component';
 import { ManagerComponent } from './manager/manager.component';
 import { IndexComponent } from './index/index.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ClientComponent } from './client/client.component';
+import { RendezVousComponent } from './rendez-vous/rendez-vous.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +18,8 @@ import { HttpClientModule } from '@angular/common/http';
     ServiceComponent,
     ManagerComponent,
     IndexComponent,
+    ClientComponent,
+    RendezVousComponent,
   ],
   imports: [
     BrowserModule,
@@ -32,6 +36,12 @@ import { HttpClientModule } from '@angular/common/http';
       },{
         path:'service',
         component : ServiceComponent
+      },{
+        path:'client',
+        component : ClientComponent
+      },{
+        path:'rendez-vous',
+        component : RendezVousComponent
       }
     ])
   ],

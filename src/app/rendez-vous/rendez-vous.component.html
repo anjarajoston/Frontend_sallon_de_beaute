@@ -28,9 +28,9 @@
     <ul class="sidebar-nav" id="sidebar-nav">
 
         <li class="nav-item">
-            <a class="nav-link collapsed" href="manager">
+            <a class="nav-link collapsed" href="client">
               <i class="bi bi-person"></i>
-              <span>Manager</span>
+              <span>Client</span>
             </a>
         </li><!-- End Dashboard Nav -->
 
@@ -45,7 +45,7 @@
   
           <div class="card">
               <div class="card-body">
-                  <h5 class="card-title">Service</h5>
+                  <h5 class="card-title">Rendez-vous</h5>
    
   
                   <!-- Default Tabs -->
@@ -65,26 +65,26 @@
                             <div class="row">
                                 
                                 <div class="card-body">
-                                    <h5 class="card-title">Create <span>| service</span></h5>
+                                    <h5 class="card-title">Create <span>| rendez-vous</span></h5>
 
                                     <!-- Vertical Form -->
-                                    <form class="row g-3" #forme="ngForm" (ngSubmit)="nouveau_service(forme)">
+                                    <form class="row g-3" #forme="ngForm" (ngSubmit)="nouveau_rdv(forme)">
                                         <div class="col-12">
-                                          <label for="inputNanme4" class="form-label">Nom</label>
-                                          <input type="text" class="form-control" name="nom" ngModel required #nom="ngModel">
+                                          <label for="inputNanme4" class="form-label">Service</label>
+                                          <select class="form-control" name="serv" ngModel required #serv="ngModel">
+                                                <option *ngFor="let service of services; let i = index" value="{{service.nom}}">{{service.nom}}</option>
+                                          </select>
                                         </div>
                                         <div class="col-12">
-                                          <label for="inputNanme4" class="form-label">Prix</label>
-                                          <input type="text" class="form-control" name="prix" ngModel required #prix="ngModel">
+                                          <label for="inputNanme4" class="form-label">Employé</label>
+                                          <select class="form-control" name="emp" ngModel required #emp="ngModel">
+                                            <option *ngFor="let employer of employers; let i = index" value="{{employer.prenom}}">{{employer.prenom}}</option>
+                                          </select>
                                         </div>
                                         <div class="col-12">
-                                          <label for="inputNanme4" class="form-label">Durée</label>
-                                          <input type="time" class="form-control" name="duree" ngModel required #duree="ngModel">
+                                          <label for="inputNanme4" class="form-label">Date et heure</label>
+                                          <input type="datetime-local" class="form-control" name="date_heure" ngModel required #duree="ngModel">
                                         </div>
-                                        <div class="col-12">
-                                            <label for="inputNanme4" class="form-label">Commission</label>
-                                            <input type="text" class="form-control" name="commission" ngModel required #commission="ngModel">
-                                          </div>
                                         <div class="text-center">
                                           <button type="submit" class="btn btn-primary">Inserer</button>
                                         </div>
@@ -103,9 +103,9 @@
                             <div class="row">
 
                                 <div class="card-body">
-                                    <h5 class="card-title">Liste <span>| service</span></h5>
+                                    <h5 class="card-title">Liste <span>| rendez-vous</span></h5>
 
-                                  
+                                    
                                 </div>
                                       
                             </div>
