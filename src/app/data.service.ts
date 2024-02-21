@@ -1,3 +1,4 @@
+import { Rendez_vous } from './Model/Rendez_vous';
 import { Service } from './Model/Service';
 import { Injectable } from '@angular/core';
 
@@ -20,5 +21,9 @@ export class DataService {
 
   liste_employer(){
     return this.http.get('http://localhost:8282/liste_employer');
+  }
+
+  nouveau_rendez_vous(rendez_vous:Rendez_vous) {
+    return this.http.post('http://localhost:8282/nouveau_rendez_vous',rendez_vous);
   }
 }

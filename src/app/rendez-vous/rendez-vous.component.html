@@ -71,14 +71,14 @@
                                     <form class="row g-3" #forme="ngForm" (ngSubmit)="nouveau_rdv(forme)">
                                         <div class="col-12">
                                           <label for="inputNanme4" class="form-label">Service</label>
-                                          <select class="form-control" name="serv" ngModel required #serv="ngModel">
-                                                <option *ngFor="let service of services; let i = index" value="{{service.nom}}">{{service.nom}}</option>
+                                          <select class="form-control" name="service" ngModel required #service="ngModel">
+                                                <option *ngFor="let service of services; let i = index" [ngValue]="service">{{service.nom}}</option>
                                           </select>
                                         </div>
                                         <div class="col-12">
                                           <label for="inputNanme4" class="form-label">Employé</label>
-                                          <select class="form-control" name="emp" ngModel required #emp="ngModel">
-                                            <option *ngFor="let employer of employers; let i = index" value="{{employer.prenom}}">{{employer.prenom}}</option>
+                                          <select class="form-control" name="employer" ngModel required #employer="ngModel">
+                                            <option *ngFor="let employer of employers; let i = index" [ngValue]="employer">{{employer.prenom}}</option>
                                           </select>
                                         </div>
                                         <div class="col-12">
