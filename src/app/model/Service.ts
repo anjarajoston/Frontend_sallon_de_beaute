@@ -3,5 +3,5 @@ export interface Service{
     nom:string,
     prix:string,
     duree:string,
-    comission:string,
+    commission:string,
 }
