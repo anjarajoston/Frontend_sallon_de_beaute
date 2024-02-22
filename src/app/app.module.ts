@@ -11,6 +11,7 @@ import { IndexComponent } from './index/index.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ClientComponent } from './client/client.component';
 import { RendezVousComponent } from './rendez-vous/rendez-vous.component';
+import { ListeRendezVousComponent } from './liste-rendez-vous/liste-rendez-vous.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { RendezVousComponent } from './rendez-vous/rendez-vous.component';
     IndexComponent,
     ClientComponent,
     RendezVousComponent,
+    ListeRendezVousComponent,
   ],
   imports: [
     BrowserModule,
@@ -42,6 +44,9 @@ import { RendezVousComponent } from './rendez-vous/rendez-vous.component';
       },{
         path:'rendez-vous',
         component : RendezVousComponent
+      },{
+        path:'liste-rendez-vous',
+        component : ListeRendezVousComponent
       }
     ])
   ],
