@@ -10,7 +10,6 @@ import { DataService } from '../serve/data.service';
 })
 export class ServiceComponent {
   Service = {
-    _id : "",
     nom : "",
     prix : "",
     duree : "",
