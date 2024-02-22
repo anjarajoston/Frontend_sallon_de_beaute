@@ -17,6 +17,7 @@ import { DetailspersonnelComponent } from './detailspersonnel/detailspersonnel.c
 import { AcceuilEmployerComponent } from './acceuil-employer/acceuil-employer.component';
 import { ServiceComponent } from './service/service.component';
 import { NouveauRendezVousComponent } from './nouveau-rendez-vous/nouveau-rendez-vous.component';
+import { AcceuilClientComponent } from './acceuil-client/acceuil-client.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { NouveauRendezVousComponent } from './nouveau-rendez-vous/nouveau-rendez
     AcceuilEmployerComponent,
     ServiceComponent,
     NouveauRendezVousComponent,
+    AcceuilClientComponent,
   ],
   imports: [
     BrowserModule,
@@ -62,6 +64,9 @@ import { NouveauRendezVousComponent } from './nouveau-rendez-vous/nouveau-rendez
       },{
         path:'nouveau_rendez_vous',
         component: ServiceComponent
+      },{
+        path:'acceuilClient',
+        component: AcceuilClientComponent
       }  
     ]),
     BrowserAnimationsModule,
