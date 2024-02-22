@@ -1,27 +1,61 @@
-import { RouterModule } from '@angular/router';
-import { NgModule, Component } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-//import { TestCssComponent } from './test-css/test-css.component';
+import { LoginComponent } from './login/login.component';
+import { HomeComponent } from './home/home.component';
+import { RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { AcceuilComponent } from './acceuil/acceuil.component';
+import { NgxWebstorageModule } from 'ngx-webstorage';
+import { GestionpersonnelComponent } from './gestionpersonnel/gestionpersonnel.component';
+import { DetailspersonnelComponent } from './detailspersonnel/detailspersonnel.component';
+import { AcceuilEmployerComponent } from './acceuil-employer/acceuil-employer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    //TestCssComponent
+    LoginComponent,
+    HomeComponent,
+    AcceuilComponent,
+    GestionpersonnelComponent,
+    DetailspersonnelComponent,
+    AcceuilEmployerComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
-    /*RouterModule.forRoot([
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
+    MatProgressSpinnerModule,
+    NgxWebstorageModule.forRoot(),
+    RouterModule.forRoot([
       {
-        path:'testCss',
-        component : TestCssComponent
-      }
-    ])*/
+        path:'',
+        component: HomeComponent
+      },{
+        path:'login/:modele',
+        component: LoginComponent
+      },{
+        path:'acceuil',
+        component: AcceuilComponent   
+      },{
+        path:'acceuilEmployer',
+        component: AcceuilEmployerComponent   
+      },{
+        path:'gestionPersonnel',
+        component: GestionpersonnelComponent
+      },{
+        path:'details/:id',
+        component: DetailspersonnelComponent
+      }  
+    ]),
+    BrowserAnimationsModule,
   ],
-  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
