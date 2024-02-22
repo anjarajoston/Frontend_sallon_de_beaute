@@ -49,6 +49,9 @@ import { InscriptionComponent } from './inscription/inscription.component';
         path:'login/:modele',
         component: LoginComponent
       },{
+        path:'inscription/:modele',
+        component: InscriptionComponent
+      },{
         path:'acceuil',
         component: AcceuilComponent   
       },{
