@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { membres } from '../model/membre';
+import { Service } from '../model/Service';
+import { Rendez_vous } from '../model/Rendez_vous';
 
 @Injectable({
   providedIn: 'root'
@@ -59,5 +61,19 @@ export class DataService {
   UpadteHoraireById(jour:string,id:string,nouveau:string){
     return this.httpClient.get('http://localhost:8282/updateHoraire/'+jour+'/'+id+'/'+nouveau);
   }
-
+  nouveau_service(service:Service) {
+    return this.httpClient.post('http://localhost:8282/nouveau_service',service);
+  }
+  liste_service(){
+    return this.httpClient.get('http://localhost:8282/liste_service');
+  }
+  liste_employer(){
+    return this.httpClient.get('http://localhost:8282/liste_employer');
+  }
+  nouveau_rendez_vous(rendez_vous:Rendez_vous) {
+    return this.httpClient.post('http://localhost:8282/nouveau_rendez_vous',rendez_vous);
+  }
+  liste_rendez_vous(){
+    return this.httpClient.get('http://localhost:8282/liste_rendez_vous');
+  }
 }

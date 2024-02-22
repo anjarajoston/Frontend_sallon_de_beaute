@@ -16,6 +16,7 @@ import { GestionpersonnelComponent } from './gestionpersonnel/gestionpersonnel.c
 import { DetailspersonnelComponent } from './detailspersonnel/detailspersonnel.component';
 import { AcceuilEmployerComponent } from './acceuil-employer/acceuil-employer.component';
 import { ServiceComponent } from './service/service.component';
+import { NouveauRendezVousComponent } from './nouveau-rendez-vous/nouveau-rendez-vous.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { ServiceComponent } from './service/service.component';
     DetailspersonnelComponent,
     AcceuilEmployerComponent,
     ServiceComponent,
+    NouveauRendezVousComponent,
   ],
   imports: [
     BrowserModule,
@@ -54,6 +56,12 @@ import { ServiceComponent } from './service/service.component';
       },{
         path:'details/:id',
         component: DetailspersonnelComponent
+      },{
+        path:'service',
+        component: ServiceComponent
+      },{
+        path:'nouveau_rendez_vous',
+        component: ServiceComponent
       }  
     ]),
     BrowserAnimationsModule,
