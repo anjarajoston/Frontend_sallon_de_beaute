@@ -15,6 +15,7 @@ import { NgxWebstorageModule } from 'ngx-webstorage';
 import { GestionpersonnelComponent } from './gestionpersonnel/gestionpersonnel.component';
 import { DetailspersonnelComponent } from './detailspersonnel/detailspersonnel.component';
 import { AcceuilEmployerComponent } from './acceuil-employer/acceuil-employer.component';
+import { ServiceComponent } from './service/service.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { AcceuilEmployerComponent } from './acceuil-employer/acceuil-employer.co
     GestionpersonnelComponent,
     DetailspersonnelComponent,
     AcceuilEmployerComponent,
+    ServiceComponent,
   ],
   imports: [
     BrowserModule,
