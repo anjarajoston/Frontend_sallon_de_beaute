@@ -63,7 +63,7 @@ import { AcceuilClientComponent } from './acceuil-client/acceuil-client.componen
         component: ServiceComponent
       },{
         path:'nouveau_rendez_vous',
-        component: ServiceComponent
+        component: NouveauRendezVousComponent
       },{
         path:'acceuilClient',
         component: AcceuilClientComponent

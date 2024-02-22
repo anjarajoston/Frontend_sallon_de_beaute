@@ -56,7 +56,7 @@ export class LoginComponent implements OnInit {
                 window.location.href = '/acceuilEmployer';
               }else if (this.modele == 'Manager') {
                 window.location.href = '/acceuil';
-              } else {
+              }else/* if (this.modele == 'Client')*/ {
                 window.location.href = '/acceuilClient';
               }
               this.sessionStorage.store('id', response);

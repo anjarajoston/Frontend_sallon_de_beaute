@@ -4,6 +4,7 @@ import { Service } from '../model/Service';
 import { Rendez_vous } from '../model/Rendez_vous';
 import { DataService } from '../serve/data.service';
 import { NgForm } from '@angular/forms';
+import { SessionStorageService } from 'ngx-webstorage';
 
 @Component({
   selector: 'app-nouveau-rendez-vous',
@@ -11,10 +12,16 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./nouveau-rendez-vous.component.css']
 })
 export class NouveauRendezVousComponent {
+  sessionModele: any;
+  client = {
+    nom: "",
+    prenom: "",
+    email: "",
+    password: ""
+  } as membres;
   services : Service[] = [];
   employers : membres[] = [];
   Service = {
-    _id : "",
     nom : "",
     prix : "",
     duree : "",
@@ -22,7 +29,6 @@ export class NouveauRendezVousComponent {
   } as Service;
 
   Employer = {
-    _id : "",
     nom: "",
     prenom: "",
     email: "",
@@ -39,7 +45,7 @@ export class NouveauRendezVousComponent {
 
   //service : string[] = [];
 
-  constructor(private data: DataService) { }
+    constructor(private data: DataService,private sessionStorage: SessionStorageService) { }
 
   ngOnInit(): void {
     this.data.liste_service().subscribe(response=>{
@@ -51,13 +57,22 @@ export class NouveauRendezVousComponent {
       console.log(response);
       this.employers = response as membres[];
     });
+
+    this.sessionModele = this.sessionStorage.retrieve('id');
+    this.data.getById("Client",this.sessionModele).subscribe(response=>{
+      console.log(response);
+      this.client = response as membres;
+    });
   }
 
   nouveau_rdv(forme:NgForm){
+    this.Rendez_vous.client = this.client;
+    this.Service._id = forme.value.service._id;
     this.Service.nom = forme.value.service.nom;
     this.Service.prix = forme.value.service.prix;
     this.Service.duree = forme.value.service.duree;
     this.Service.commission = forme.value.service.commission;
+    this.Employer._id = forme.value.employer._id;
     this.Employer.nom = forme.value.employer.nom;
     this.Employer.prenom = forme.value.employer.prenom;
     this.Employer.email = forme.value.employer.email;
