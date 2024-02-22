@@ -14,7 +14,7 @@ export class DataService {
 
 
   Seconnecter(modele:string,email:string,password:string){
-    const url = "http://localhost:8282/login/"+modele;
+    const url = "https://backend-sallon-de-beaute.onrender.com/login/"+modele;
     const Body = {
       "email" : email,
       "mdp" : password
