@@ -74,7 +74,10 @@ import { ListeRendezVousComponent } from './liste-rendez-vous/liste-rendez-vous.
       },{
         path:'acceuilClient',
         component: AcceuilClientComponent
-      }  
+      },{
+        path:'liste_rendez_vous',
+        component: ListeRendezVousComponent
+      } 
     ]),
     BrowserAnimationsModule,
   ],
