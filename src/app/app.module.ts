@@ -19,6 +19,7 @@ import { ServiceComponent } from './service/service.component';
 import { NouveauRendezVousComponent } from './nouveau-rendez-vous/nouveau-rendez-vous.component';
 import { AcceuilClientComponent } from './acceuil-client/acceuil-client.component';
 import { InscriptionComponent } from './inscription/inscription.component';
+import { ListeRendezVousComponent } from './liste-rendez-vous/liste-rendez-vous.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { InscriptionComponent } from './inscription/inscription.component';
     NouveauRendezVousComponent,
     AcceuilClientComponent,
     InscriptionComponent,
+    ListeRendezVousComponent,
   ],
   imports: [
     BrowserModule,

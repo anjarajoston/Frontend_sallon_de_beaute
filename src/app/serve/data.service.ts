@@ -73,7 +73,7 @@ export class DataService {
   nouveau_rendez_vous(rendez_vous:Rendez_vous) {
     return this.httpClient.post('https://backend-sallon-de-beaute.onrender.com/nouveau_rendez_vous',rendez_vous);
   }
-  liste_rendez_vous(){
-    return this.httpClient.get('https://backend-sallon-de-beaute.onrender.com/liste_rendez_vous');
+  liste_rendez_vous(id:string){
+    return this.httpClient.get('https://backend-sallon-de-beaute.onrender.com/liste_rendez_vous'+id);
   }
 }
