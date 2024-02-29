@@ -61,7 +61,7 @@ export class NouveauRendezVousComponent {
     this.sessionModele = this.sessionStorage.retrieve('id');
     this.data.getById("Client",this.sessionModele).subscribe(response=>{
       console.log(response);
-      this.client = response as membres;
+      this.client = (response as membres[])[0];
     });
   }
 
