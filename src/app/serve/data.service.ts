@@ -14,7 +14,8 @@ export class DataService {
 
 
   Seconnecter(modele:string,email:string,password:string){
-    const url = "https://backend-sallon-de-beaute.onrender.com/login/"+modele;
+    // const url = "https://backend-sallon-de-beaute.onrender.com/login/"+modele;
+    const url = "http://localhost:8282/login/"+modele;
     const Body = {
       "email" : email,
       "mdp" : password
@@ -30,7 +31,7 @@ export class DataService {
   }
 
   inscrit(mb:membres,modele:string){
-    var url='https://backend-sallon-de-beaute.onrender.com/inscription/'+modele;
+    var url='http://localhost:8282/inscription/'+modele;
     const Body = {
       "nom" : mb.nom,
       "prenom" : mb.prenom,
@@ -46,34 +47,52 @@ export class DataService {
     }
     return this.httpClient.post(url,Body,options);
   }
+  updateService(service:Service){
+    var url='http://localhost:8282/updateService/';
+    const Body = {
+      "id" : service._id,
+      "nom" : service.nom,
+      "prix" : service.prix,
+      "duree" : service.duree,
+      "commission" : service.commission
+    }
+    const headers = new HttpHeaders({
+      'Content-type':'application/json'
+    });
+    const options = {
+      headers , 
+      withCredentials: true
+    }
+    return this.httpClient.post(url,Body,options);
+  }
   gettous(modele:string){
-    return this.httpClient.get('https://backend-sallon-de-beaute.onrender.com/lister/'+modele);
+    return this.httpClient.get('http://localhost:8282/lister/'+modele);
   }
   recherche(modele:string,motcle:string){
-    return this.httpClient.get('https://backend-sallon-de-beaute.onrender.com/recherche/'+modele+'/'+motcle);
+    return this.httpClient.get('http://localhost:8282/recherche/'+modele+'/'+motcle);
   }
   getById(modele:string,id:string){
-    return this.httpClient.get('https://backend-sallon-de-beaute.onrender.com/getById/'+modele+'/'+id);
+    return this.httpClient.get('http://localhost:8282/getById/'+modele+'/'+id);
   }
   getHoraireById(id:string){
-    return this.httpClient.get('https://backend-sallon-de-beaute.onrender.com/getHoraire/'+id);
+    return this.httpClient.get('http://localhost:8282/getHoraire/'+id);
   }
   UpadteHoraireById(jour:string,id:string,nouveau:string){
-    return this.httpClient.get('https://backend-sallon-de-beaute.onrender.com/updateHoraire/'+jour+'/'+id+'/'+nouveau);
+    return this.httpClient.get('http://localhost:8282/updateHoraire/'+jour+'/'+id+'/'+nouveau);
   }
   nouveau_service(service:Service) {
-    return this.httpClient.post('https://backend-sallon-de-beaute.onrender.com/nouveau_service',service);
+    return this.httpClient.post('http://localhost:8282/nouveau_service',service);
   }
   liste_service(){
-    return this.httpClient.get('https://backend-sallon-de-beaute.onrender.com/liste_service');
+    return this.httpClient.get('http://localhost:8282/liste_service');
   }
   liste_employer(){
-    return this.httpClient.get('https://backend-sallon-de-beaute.onrender.com/liste_employer');
+    return this.httpClient.get('http://localhost:8282/liste_employer');
   }
   nouveau_rendez_vous(rendez_vous:Rendez_vous) {
-    return this.httpClient.post('https://backend-sallon-de-beaute.onrender.com/nouveau_rendez_vous',rendez_vous);
+    return this.httpClient.post('http://localhost:8282/nouveau_rendez_vous',rendez_vous);
   }
-  liste_rendez_vous(id:string){
-    return this.httpClient.get('https://backend-sallon-de-beaute.onrender.com/liste_rendez_vous/'+id);
+  liste_rendez_vous(){
+    return this.httpClient.get('http://localhost:8282/liste_rendez_vous');
   }
 }
